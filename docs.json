@@ -2,10 +2,11 @@
   {
     "name": "Dev Notes",
     "slug": "notes",
+    "type": "simple",
     "links": {
       "code": "https://github.com/buggypather/devdocs-pack-example"
     },
-    "mtime": 1793256995,
-    "db_size": 1374
+    "mtime": 1793258236,
+    "db_size": 3741
   }
 ]

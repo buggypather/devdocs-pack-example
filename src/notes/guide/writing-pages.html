@@ -1,0 +1,66 @@
+<!--
+  A page template: copy this file, rename it, and replace the text.
+
+  - Save it under src/<doc>/, e.g. src/notes/git/branches.html.
+    The folder it's in ("git") becomes its group in the sidebar.
+  - Run `node build.mjs`, then commit and push.
+  - Only the page's content goes here: no <html>, <head> or <body>,
+    no <style> or <script> (DevDocs removes them).
+-->
+
+<h1>Writing pages</h1>
+
+<p>Each page is one HTML file. Its <code>&lt;h1&gt;</code> is the page's name in search and in the
+sidebar, and every <code>&lt;h2 id="..."&gt;</code> becomes a search entry of its own, so readers
+can jump straight to a section.</p>
+
+<h2 id="sections">Sections</h2>
+
+<p>Give each section an <code>&lt;h2&gt;</code> with a short, unique <code>id</code>: lower case,
+words joined by hyphens. Use <code>&lt;h3&gt;</code> inside a section for smaller headings; those
+aren't search entries.</p>
+
+<h3>A smaller heading</h3>
+
+<p>Plain paragraphs, <strong>bold</strong>, <em>italics</em> and <code>inline code</code> all work.</p>
+
+<h2 id="code">Code</h2>
+
+<p>Put code in a <code>&lt;pre&gt;</code> and name its language in <code>data-language</code>, which
+colours it. Escape <code>&lt;</code>, <code>&gt;</code> and <code>&amp;</code> as
+<code>&amp;lt;</code>, <code>&amp;gt;</code> and <code>&amp;amp;</code>. Each block gets a copy
+button.</p>
+
+<pre data-language="javascript">// Languages include javascript, typescript, html, css, bash, json, python and ruby.
+const total = items.reduce((sum, item) =&gt; sum + item.price, 0);</pre>
+
+<h2 id="notes">Notes and warnings</h2>
+
+<blockquote>
+  <p>A <code>&lt;blockquote&gt;</code> is shown as a highlighted note: good for tips and warnings.</p>
+</blockquote>
+
+<h2 id="lists-and-tables">Lists and tables</h2>
+
+<ul>
+  <li>Lists are <code>&lt;ul&gt;</code> (bullets) or <code>&lt;ol&gt;</code> (numbered).</li>
+  <li>Tables are plain <code>&lt;table&gt;</code>s:</li>
+</ul>
+
+<table>
+  <tr><th>Command</th><th>What it does</th></tr>
+  <tr><td><code>git status</code></td><td>Shows what changed</td></tr>
+  <tr><td><code>git log --oneline</code></td><td>Lists the commits</td></tr>
+</table>
+
+<h2 id="links">Links</h2>
+
+<p>Link to another page of the doc by its path relative to this one, without <code>.html</code>:
+<a href="../git/basics">Git basics</a>, or a section of it:
+<a href="../git/basics#save">saving a checkpoint</a>. Links to other websites work as usual:
+<a href="https://devdocs.io">DevDocs</a>.</p>
+
+<h2 id="images">Images</h2>
+
+<p>Use full addresses for images, e.g. <code>&lt;img src="https://…/diagram.png" alt="…"&gt;</code>,
+and always describe them in <code>alt</code>.</p>

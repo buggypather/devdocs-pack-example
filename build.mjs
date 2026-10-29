@@ -5,6 +5,7 @@
 // Each folder in src/ is one doc:
 //
 //   src/<slug>/doc.json     {"name": "...", "version": "...", "links": {"home": "...", "code": "..."}}
+//                           and optionally "type": the DevDocs page style, "simple" by default
 //   src/<slug>/index.html   the doc's home page
 //   src/<slug>/**/*.html    the other pages
 //
@@ -37,7 +38,8 @@ for (const slug of readdirSync(SRC)) {
   const entries = [];
   for (const file of htmlFiles(dir)) {
     const path = relative(dir, file).split(sep).join("/").replace(/\.html$/, "");
-    const html = readFileSync(file, "utf8").trim();
+    // Comments are notes for whoever edits the page, like the one in the template.
+    const html = readFileSync(file, "utf8").replace(/<!--[\s\S]*?-->/g, "").trim();
     pages[path] = html;
     if (path === "index") {
       continue; // The doc itself stands for its home page.
@@ -80,6 +82,8 @@ for (const slug of readdirSync(SRC)) {
   docs.push({
     name: meta.name,
     slug,
+    // DevDocs' "simple" style: headings with section bars, quotes as notes.
+    type: meta.type || "simple",
     ...(meta.version !== undefined && { version: String(meta.version) }),
     ...(meta.release && { release: String(meta.release) }),
     ...(meta.links && { links: meta.links }),
