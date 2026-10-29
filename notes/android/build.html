@@ -1,0 +1,7 @@
+<h1>Building the Android app</h1>
+<p>For a Capacitor project. Gradle has to run on Java 21.</p>
+<h2 id="sync">Copy the web app in</h2>
+<pre data-language="bash">npm run build &amp;&amp; npx cap sync android</pre>
+<h2 id="apk">Build a debug APK</h2>
+<pre data-language="bash">cd android &amp;&amp; ./gradlew assembleDebug</pre>
+<p>The APK is in <code>app/build/outputs/apk/debug/</code>.</p>
