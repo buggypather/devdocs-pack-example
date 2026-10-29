@@ -5,7 +5,9 @@
 // Each folder in src/ is one doc:
 //
 //   src/<slug>/doc.json     {"name": "...", "version": "...", "links": {"home": "...", "code": "..."}}
-//                           and optionally "type": the DevDocs page style, "simple" by default
+//                           and optionally "type": the DevDocs page style, "simple" by default,
+//                           and "category": where DevDocs lists it (languages, web, frameworks,
+//                           libraries, testing, tools, databases, ai, services or other)
 //   src/<slug>/index.html   the doc's home page
 //   src/<slug>/**/*.html    the other pages
 //
@@ -88,6 +90,7 @@ for (const slug of readdirSync(SRC)) {
     ...(meta.release && { release: String(meta.release) }),
     ...(meta.links && { links: meta.links }),
     ...(meta.attribution && { attribution: meta.attribution }),
+    ...(meta.category && { category: meta.category }),
     mtime: Math.floor(Date.now() / 1000),
     db_size: Buffer.byteLength(db),
   });
