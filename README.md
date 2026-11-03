@@ -1,6 +1,6 @@
 # DevDocs doc pack: Dev Notes
 
-An example [doc pack](https://github.com/buggypather/devdocs/blob/custom-doc-packs/docs/doc-packs.md):
+An example [doc pack](https://github.com/buggypather/devdocs/blob/main-custom-docs/docs/doc-packs.md):
 documentation you can add to DevDocs by pasting this repository's address under
 **Preferences → Doc packs**.
 
